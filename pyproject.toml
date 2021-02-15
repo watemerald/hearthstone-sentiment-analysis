@@ -8,6 +8,9 @@ version = "0.1.0"
 python = "^3.8"
 dvc = {extras = ["gs"], version = "^1.11.15"}
 pandas = "^1.2.2"
+prefect = "^0.14.8"
+pydantic = "^1.7.3"
+requests = "^2.25.1"
 
 [tool.poetry.dev-dependencies]
 autoflake = "*"
