@@ -4,6 +4,6 @@
 set -e
 set -x
 
-flake8 hearthstone_sentiment_analysis tests
-black hearthstone_sentiment_analysis tests --check
-isort hearthstone_sentiment_analysis tests --check-only
+flake8 hearthstone_sentiment_analysis data_gathering tests
+black hearthstone_sentiment_analysis data_gathering tests --check
+isort hearthstone_sentiment_analysis data_gathering tests --check-only

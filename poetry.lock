@@ -447,7 +447,7 @@ hdfs = ["pyarrow (>=2.0.0)"]
 oss = ["oss2 (==2.6.1)", "pycryptodome (<3.9.9)"]
 s3 = ["boto3 (>=1.9.201)"]
 ssh = ["paramiko[invoke] (>=2.7.0)"]
-ssh_gssapi = ["paramiko[invoke,gssapi] (>=2.7.0)"]
+ssh_gssapi = ["paramiko[gssapi,invoke] (>=2.7.0)"]
 tests = ["wheel (>=0.31.1)", "pytest (>=6.0.1)", "pytest-cov", "pytest-docker (>=0.7.2)", "pytest-timeout (>=1.3.3)", "pytest-cov (>=2.6.1)", "pytest-xdist (>=1.26.1)", "pytest-mock (==1.11.2)", "pytest-lazy-fixture", "pytest-tap", "flaky (>=3.5.3)", "mock (>=3.0.0)", "xmltodict (>=0.11.0)", "awscli (>=1.16.297)", "google-compute-engine (==2.8.13)", "pygments", "collective.checkdocs", "psutil", "pydocstyle (<4.0)", "jaraco.windows (==3.9.2)", "mock-ssh-server (>=0.8.2)", "moto (==1.3.16.dev122)", "aws-sam-translator (<1.29.0)", "urllib3 (<1.26.0)", "rangehttpserver (==1.2.0)", "beautifulsoup4 (==4.4.0)", "pylint (==2.5.3)", "pylint-pytest (>=0.3.0)", "pylint-plugin-utils", "wget", "filelock", "mypy", "wsgidav"]
 webdav = ["webdavclient3 (>=3.14.5)"]
 webhdfs = ["hdfs (==2.5.8)"]
@@ -467,6 +467,19 @@ description = "A platform independent file lock."
 category = "dev"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "flake8"
+version = "3.9.1"
+description = "the modular source code checker: pep8 pyflakes and co"
+category = "dev"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+
+[package.dependencies]
+mccabe = ">=0.6.0,<0.7.0"
+pycodestyle = ">=2.7.0,<2.8.0"
+pyflakes = ">=2.3.0,<2.4.0"
 
 [[package]]
 name = "flatten-dict"
@@ -1552,6 +1565,14 @@ python-versions = "*"
 pyasn1 = ">=0.4.6,<0.5.0"
 
 [[package]]
+name = "pycodestyle"
+version = "2.7.0"
+description = "Python style guide checker"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "pycparser"
 version = "2.20"
 description = "C parser in Python"
@@ -2214,7 +2235,7 @@ heapdict = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "b5a041d95502cb0927cb492ed9584bdcb5d731c5f6f24ac5f41540dd2e864296"
+content-hash = "166844d1b9878fc52d14aaabf728bf3ce905b94a71ca02c3d25a3d60465c26a2"
 
 [metadata.files]
 appdirs = [
@@ -2482,6 +2503,10 @@ entrypoints = [
 filelock = [
     {file = "filelock-3.0.12-py3-none-any.whl", hash = "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"},
     {file = "filelock-3.0.12.tar.gz", hash = "sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59"},
+]
+flake8 = [
+    {file = "flake8-3.9.1-py2.py3-none-any.whl", hash = "sha256:3b9f848952dddccf635be78098ca75010f073bfe14d2c6bda867154bea728d2a"},
+    {file = "flake8-3.9.1.tar.gz", hash = "sha256:1aa8990be1e689d96c745c5682b687ea49f2e05a443aff1f8251092b0014e378"},
 ]
 flatten-dict = [
     {file = "flatten-dict-0.3.0.tar.gz", hash = "sha256:0ccc43f15c7c84c5ef387ad19254f6769a32d170313a1bcbf4ce582089313d7e"},
@@ -3045,6 +3070,10 @@ pyasn1-modules = [
     {file = "pyasn1_modules-0.2.8-py3.5.egg", hash = "sha256:426edb7a5e8879f1ec54a1864f16b882c2837bfd06eee62f2c982315ee2473ed"},
     {file = "pyasn1_modules-0.2.8-py3.6.egg", hash = "sha256:cbac4bc38d117f2a49aeedec4407d23e8866ea4ac27ff2cf7fb3e5b570df19e0"},
     {file = "pyasn1_modules-0.2.8-py3.7.egg", hash = "sha256:c29a5e5cc7a3f05926aff34e097e84f8589cd790ce0ed41b67aed6857b26aafd"},
+]
+pycodestyle = [
+    {file = "pycodestyle-2.7.0-py2.py3-none-any.whl", hash = "sha256:514f76d918fcc0b55c6680472f0a37970994e07bbb80725808c17089be302068"},
+    {file = "pycodestyle-2.7.0.tar.gz", hash = "sha256:c389c1d06bf7904078ca03399a4816f974a1d590090fecea0c63ec26ebaf1cef"},
 ]
 pycparser = [
     {file = "pycparser-2.20-py2.py3-none-any.whl", hash = "sha256:7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"},
