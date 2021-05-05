@@ -2,9 +2,8 @@ import asyncio
 from typing import Dict, List, Tuple
 
 import httpx
-from fastapi import Depends
 
-from .settings import AppSettings, get_app_settings
+from .settings import get_app_settings
 
 
 async def search_tweets(
@@ -12,8 +11,8 @@ async def search_tweets(
     hashtags: List[str],
     *,
     max_results: int = 100,
-    settings: AppSettings = Depends(get_app_settings),
 ) -> Tuple[Dict]:
+    settings = await get_app_settings()
     headers = {"Authorization": f"Bearer {settings.TWITTER_BEARER_TOKEN}"}
 
     async with httpx.AsyncClient(headers=headers) as client:
