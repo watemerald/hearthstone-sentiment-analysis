@@ -10,3 +10,17 @@ stages:
     - path: data/raw/tweets.jsonl
       md5: 610de31a63e389859de0f0b1d1c6e257
       size: 1864342
+  prepare:
+    cmd: python hearthstone_sentiment_analysis/tweets_to_df.py
+    deps:
+    - path: data/raw/tweets.jsonl
+      md5: 610de31a63e389859de0f0b1d1c6e257
+      size: 1864342
+    - path: hearthstone_sentiment_analysis/tweets_to_df.py
+      md5: d21f2028dce08d9ae5bd9a3b7e05135b
+      size: 1965
+    outs:
+    - path: data/prepared
+      md5: 3850895292a8d6f717e3ffc21ce7ef74.dir
+      size: 1052519
+      nfiles: 2

@@ -5,3 +5,10 @@ stages:
     - hearthstone_sentiment_analysis/download_tweets.py
     outs:
     - data/raw/tweets.jsonl
+  prepare:
+    cmd: python hearthstone_sentiment_analysis/tweets_to_df.py
+    deps:
+    - data/raw/tweets.jsonl
+    - hearthstone_sentiment_analysis/tweets_to_df.py
+    outs:
+    - data/prepared
