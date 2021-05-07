@@ -5,18 +5,20 @@ name = "hearthstone-sentiment-analysis"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-dvc = {extras = ["gs"], version = "^1.11.15"}
+dvc = {extras = ["gs"], version = "^2.1.0"}
+jsonlines = "^2.0.0"
 pandas = "^1.2.2"
 prefect = "^0.14.8"
 pydantic = {extras = ["dotenv"], version = "^1.8.1"}
+python = "^3.8"
 requests = "^2.25.1"
-jsonlines = "^2.0.0"
+google-cloud-storage = "^1.38.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "*"
 black = "^20.8b1"
 data-science-types = "*"
+flake8 = "^3.9.1"
 isort = "^5.7.0"
 jupyter = "*"
 mypy = "*"
@@ -24,7 +26,6 @@ pre-commit = "*"
 pylint = "^2.6.0"
 pytest = "*"
 pytest-cov = "*"
-flake8 = "^3.9.1"
 
 [tool.isort]
 profile = "black"

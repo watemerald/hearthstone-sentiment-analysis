@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: python hearthstone_sentiment_analysis/download_tweets.py
+    deps:
+    - path: hearthstone_sentiment_analysis/download_tweets.py
+      md5: 49d9c4b2b128421b19c0f9a73f715b90
+      size: 467
+    outs:
+    - path: data/raw/tweets.jsonl
+      md5: 610de31a63e389859de0f0b1d1c6e257
+      size: 1864342
